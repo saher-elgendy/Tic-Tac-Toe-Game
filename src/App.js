@@ -7,11 +7,14 @@ function App() {
   const [stepNumber, setStepNumber] = useState(0);
   const [xTurn, setXTurn] = useState(true);
 
-  const handleClick = (id) => {
+  const handleClick = (idx) => {
     const newHistory = history.slice(0, stepNumber + 1);
     const current = newHistory[newHistory.length - 1];
     const squares = [...current.squares];
-    squares[id] = xTurn ? 'X' : 'O';
+    if(squares[idx]) {
+      return
+    }
+    squares[idx] = xTurn ? 'X' : 'O';
 
     setHistory([...newHistory, { squares }]);
     setXTurn(!xTurn);
