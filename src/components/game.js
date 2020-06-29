@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
+import Board from './board';
 
-function game() {
+function Game() {
     return (
         <div className="game">
             <Board />
@@ -9,4 +10,4 @@ function game() {
     )
 }
 
-export default game
+export default Game;
