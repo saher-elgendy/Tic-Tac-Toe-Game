@@ -1,13 +1,13 @@
 import React from 'react';
 import Square from './square';
 
-function Board() {
+function Board({squares}) {
     return (
         <div className="board">
             {
-                [...Array(9)].map((el) => {
+                [...Array(9)].map((item, i) => {
                     return (
-                        <Square />
+                        <Square key={i} value={squares[i]}/>
                     )
                 })
             }

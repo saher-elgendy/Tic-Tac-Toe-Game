@@ -1,9 +1,9 @@
  import React from 'react';
 
-function Square() {
+function Square({value}) {
     return (
         <li className="square">
-            
+            {value}
         </li>
     )
 }

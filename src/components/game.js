@@ -1,11 +1,10 @@
 import React from 'react';
 import Board from './board';
 
-function Game() {
+function Game(props) {
     return (
         <div className="game">
-            <Board />
-            
+            <Board {...props}/>
         </div>
     )
 }
