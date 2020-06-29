@@ -7,7 +7,7 @@ function Board({squares}) {
             {
                 [...Array(9)].map((item, i) => {
                     return (
-                        <Square key={i} value={squares[i]}/>
+                        <Square key={i} value={squares[i]} {...props}/>
                     )
                 })
             }

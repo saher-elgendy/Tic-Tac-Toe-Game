@@ -1,8 +1,8 @@
  import React from 'react';
 
-function Square({value}) {
+function Square({value, key, handleClick}) {
     return (
-        <li className="square">
+        <li className="square" onClick = {() => handleClick(key)}>
             {value}
         </li>
     )
