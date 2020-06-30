@@ -13,7 +13,7 @@ function App() {
     const newHistory = history.slice(0, stepNumber + 1);
     const current = newHistory[newHistory.length - 1];
     const squares = [...current.squares];
-    if(squares[idx]) {
+    if (squares[idx]) {
       return
     }
     squares[idx] = xTurn ? 'X' : 'O';
@@ -25,15 +25,16 @@ function App() {
 
   const moveTo = (move) => {
     setStepNumber(move);
+    move % 2 === 0 ? setXTurn(true) : setXTurn(false);
   }
 
   const current = history[stepNumber];
   const squares = current.squares;
-  
+
   return (
     <div className="App">
       <Game squares={squares} handleClick={handleClick} />
-      <Moves history={history} moveTo={moveTo}/>
+      <Moves history={history} moveTo={moveTo} />
       <GameStatus />
     </div>
   );
