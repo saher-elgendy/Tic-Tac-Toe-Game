@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Game from './components/game';
+import GameStatus from './components/gameStatus';
+import Moves from './components/moves';
 
 
 function App() {
@@ -20,12 +22,19 @@ function App() {
     setXTurn(!xTurn);
     setStepNumber(stepNumber + 1);
   }
-  console.log(history)
+
+  const moveTo = (move) => {
+    setStepNumber(move);
+  }
+
   const current = history[stepNumber];
   const squares = current.squares;
+  
   return (
     <div className="App">
       <Game squares={squares} handleClick={handleClick} />
+      <Moves history={history} moveTo={moveTo}/>
+      <GameStatus />
     </div>
   );
 }
