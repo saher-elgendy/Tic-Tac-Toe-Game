@@ -33,9 +33,10 @@ function App() {
 
   return (
     <div className="App">
+      <GameStatus xTurn={xTurn}/>
       <Game squares={squares} handleClick={handleClick} />
       <Moves history={history} moveTo={moveTo} />
-      <GameStatus />
+
     </div>
   );
 }
