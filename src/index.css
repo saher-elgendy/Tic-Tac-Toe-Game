@@ -25,16 +25,15 @@ button {
 }
 
 .App {
-  width: 500px;
+  width: 600px;
   margin: 1rem auto;
   display: flex;
-  justify-content: space-between;
   align-items: center
 }
 
 .game {
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   display: flex;
 }
 
@@ -59,4 +58,10 @@ button {
 
 .moves {
   width: 100px;
+  margin-left: 2rem;
+}
+
+.game-status {
+  width: 150px;
+
 }
