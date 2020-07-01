@@ -1,10 +1,12 @@
 import React from 'react';
 
 
-function GameStatus() {
+function GameStatus({ xTurn }) {
     return (
-        <div>
-            
+        <div className="game-status">
+            <p>
+                {xTurn ? 'player X turn' : 'player O turn'}
+            </p>
         </div>
     )
 }
