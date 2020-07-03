@@ -13,8 +13,8 @@ function App() {
     const newHistory = history.slice(0, stepNumber + 1);
     const current = newHistory[newHistory.length - 1];
     const squares = [...current.squares];
-    if (squares[idx]) {
-      return
+    if (squares[idx] || checkWinner(squares)) {
+      return;
     }
     squares[idx] = xTurn ? 'X' : 'O';
 
@@ -26,6 +26,28 @@ function App() {
   const moveTo = (move) => {
     setStepNumber(move);
     move % 2 === 0 ? setXTurn(true) : setXTurn(false);
+  }
+
+  const checkWinner = (squares) => {
+    const positions= [
+      [0, 1,2],
+      [3,4,5],
+      [6, 7,8],
+      [0, 4, 8],
+      [2, 4, 6],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+    ];
+    
+    for(let i = 0; i < positions.length; i++) {
+      const [a, b, c] = squares[i];
+       if(squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+         return true
+       }
+    }
+
+    return false;
   }
 
   const current = history[stepNumber];
