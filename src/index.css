@@ -31,7 +31,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  align-items: center
+  align-items: center;
 }
 
 .game {
@@ -50,7 +50,7 @@ button {
 
 .square {
   border: 1px solid #000;
-  width: 32.8%;
+  width: 32.6%;
   height: 32.8%;
   display: flex;
   justify-content: center;
